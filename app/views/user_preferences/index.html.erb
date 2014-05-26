@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>User preferences</h1>
+</div>
+
+<p><a href="/user_preferences/new" class="btn btn-primary">Add a New User Preference</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Image url</th>
+      <th>Caption</th>
+      <th>User preference boolean</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_preferences.each do |user_preference| %>
+      <tr>
+        <td><%= user_preference.image_url %></td>
+        <td><%= user_preference.caption %></td>
+        <td><%= user_preference.user_preference_boolean %></td>
+        <td>
+          <a href="/user_preferences/<%= user_preference.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/user_preferences/<%= user_preference.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_user_preference/<%= user_preference.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

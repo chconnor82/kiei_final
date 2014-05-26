@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Edit User Preference #<%= @user_preference.id %></h1>
+</div>
+
+<% if @user_preference.errors.any? %>
+  <% @user_preference.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_user_preference/<%= @user_preference.id %>" class="form-horizontal">
+  <!-- Label and input for image_url -->
+  <div class="form-group">
+    <label for="image_url" class="col-sm-2 control-label">
+      Image url
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @user_preference.image_url %>">
+    </div>
+  </div>
+
+  <!-- Label and input for caption -->
+  <div class="form-group">
+    <label for="caption" class="col-sm-2 control-label">
+      Caption
+    </label>
+    <div class="col-sm-10">
+      <textarea id="caption" name="caption" placeholder="Caption" class="form-control" rows="3"><%= @user_preference.caption %></textarea>
+    </div>
+  </div>
+
+  <!-- Label and input for user_preference_boolean -->
+  <div class="form-group">
+    <label for="user_preference_boolean" class="col-sm-2 control-label">
+      User preference boolean
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="user_preference_boolean" name="user_preference_boolean" placeholder="User preference boolean" class="form-control" value="<%= @user_preference.user_preference_boolean %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update User Preference" class="btn btn-primary">
+    </div>
+  </div>
+</form>
