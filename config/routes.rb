@@ -58,7 +58,7 @@ Rails.application.routes.draw do
   get('/delete_user_preference/:id', { :controller => 'user_preferences', :action => 'destroy' })
   #------------------------------
 
-  get('/home_610', {:controller => 'session', :action => 'new' })
+  get('/home_610/new', {:controller => 'session', :action => 'new' })
 
 end
 
