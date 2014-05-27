@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # devise_for :user_detail
 
-  # root 'session#new'
+  root 'home#new'
 
   # Routes for the Current_room resource:
   # CREATE
@@ -58,7 +58,7 @@ Rails.application.routes.draw do
   get('/delete_user_preference/:id', { :controller => 'user_preferences', :action => 'destroy' })
   #------------------------------
 
-  get('/home_610/new', {:controller => 'session', :action => 'new' })
+  get('/home_610', {:controller => 'home', :action => 'new' })
 
 end
 
