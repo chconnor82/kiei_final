@@ -23,7 +23,8 @@
         <td><%= current_room.height %></td>
         <td><%= current_room.Width %></td>
         <td><%= current_room.room_type %></td>
-        <td><%= current_room.photo_image %></td>
+        <td><img src= "<%= current_room.photo_image %>" width="300"></td>
+
         <td>
           <a href="/current_rooms/<%= current_room.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
