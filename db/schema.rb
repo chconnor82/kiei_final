@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526205415) do
+ActiveRecord::Schema.define(version: 20140526224212) do
+
+  create_table "current_rooms", force: true do |t|
+    t.float    "height"
+    t.float    "Width"
+    t.text     "room_type"
+    t.string   "photo_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "room_preferences", force: true do |t|
+    t.string   "room_photo_id"
+    t.string   "integer"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_preferences", force: true do |t|
     t.string   "image_url"

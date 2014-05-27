@@ -1,4 +1,45 @@
 Rails.application.routes.draw do
+  # devise_for :user_detail
+
+  # root 'session#new'
+
+  # Routes for the Current_room resource:
+  # CREATE
+  get('/current_rooms/new', { :controller => 'current_rooms', :action => 'new' })
+  get('/create_current_room', { :controller => 'current_rooms', :action => 'create' })
+
+  # READ
+  get('/current_rooms', { :controller => 'current_rooms', :action => 'index' })
+  get('/current_rooms/:id', { :controller => 'current_rooms', :action => 'show' })
+
+  # UPDATE
+  get('/current_rooms/:id/edit', { :controller => 'current_rooms', :action => 'edit' })
+  get('/update_current_room/:id', { :controller => 'current_rooms', :action => 'update' })
+
+  # DELETE
+  get('/delete_current_room/:id', { :controller => 'current_rooms', :action => 'destroy' })
+  #------------------------------
+
+  # devise_for :users
+
+
+
+  # Routes for the Room_preference resource:
+  # CREATE
+  get('/room_preferences/new', { :controller => 'room_preferences', :action => 'new' })
+  get('/create_room_preference', { :controller => 'room_preferences', :action => 'create' })
+
+  # READ
+  get('/room_preferences', { :controller => 'room_preferences', :action => 'index' })
+  get('/room_preferences/:id', { :controller => 'room_preferences', :action => 'show' })
+
+  # UPDATE
+  get('/room_preferences/:id/edit', { :controller => 'room_preferences', :action => 'edit' })
+  get('/update_room_preference/:id', { :controller => 'room_preferences', :action => 'update' })
+
+  # DELETE
+  get('/delete_room_preference/:id', { :controller => 'room_preferences', :action => 'destroy' })
+  #------------------------------
 
   # Routes for the User_preference resource:
   # CREATE
@@ -16,8 +57,6 @@ Rails.application.routes.draw do
   # DELETE
   get('/delete_user_preference/:id', { :controller => 'user_preferences', :action => 'destroy' })
   #------------------------------
-
-# root 'session#home'
 
   get('/home_610', {:controller => 'session', :action => 'new' })
 

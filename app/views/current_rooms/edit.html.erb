@@ -1,0 +1,60 @@
+<div class="page-header">
+  <h1>Edit Current Room #<%= @current_room.id %></h1>
+</div>
+
+<% if @current_room.errors.any? %>
+  <% @current_room.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_current_room/<%= @current_room.id %>" class="form-horizontal">
+  <!-- Label and input for height -->
+  <div class="form-group">
+    <label for="height" class="col-sm-2 control-label">
+      Height
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="height" name="height" placeholder="Height" class="form-control" value="<%= @current_room.height %>">
+    </div>
+  </div>
+
+  <!-- Label and input for Width -->
+  <div class="form-group">
+    <label for="Width" class="col-sm-2 control-label">
+      Width
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="Width" name="Width" placeholder="Width" class="form-control" value="<%= @current_room.Width %>">
+    </div>
+  </div>
+
+  <!-- Label and input for room_type -->
+  <div class="form-group">
+    <label for="room_type" class="col-sm-2 control-label">
+      Room type
+    </label>
+    <div class="col-sm-10">
+      <textarea id="room_type" name="room_type" placeholder="Room type" class="form-control" rows="3"><%= @current_room.room_type %></textarea>
+    </div>
+  </div>
+
+  <!-- Label and input for photo_image -->
+  <div class="form-group">
+    <label for="photo_image" class="col-sm-2 control-label">
+      Photo image
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="photo_image" name="photo_image" placeholder="Photo image" class="form-control" value="<%= @current_room.photo_image %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Current Room" class="btn btn-primary">
+    </div>
+  </div>
+</form>

@@ -1,0 +1,60 @@
+<div class="page-header">
+  <h1>Edit Room Preference #<%= @room_preference.id %></h1>
+</div>
+
+<% if @room_preference.errors.any? %>
+  <% @room_preference.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_room_preference/<%= @room_preference.id %>" class="form-horizontal">
+  <!-- Label and input for room_photo_id -->
+  <div class="form-group">
+    <label for="room_photo_id" class="col-sm-2 control-label">
+      Room photo
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="room_photo_id" name="room_photo_id" placeholder="Room photo" class="form-control" value="<%= @room_preference.room_photo_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for integer -->
+  <div class="form-group">
+    <label for="integer" class="col-sm-2 control-label">
+      Integer
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="integer" name="integer" placeholder="Integer" class="form-control" value="<%= @room_preference.integer %>">
+    </div>
+  </div>
+
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id" class="col-sm-2 control-label">
+      User
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @room_preference.user_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for integer -->
+  <div class="form-group">
+    <label for="integer" class="col-sm-2 control-label">
+      Integer
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="integer" name="integer" placeholder="Integer" class="form-control" value="<%= @room_preference.integer %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Room Preference" class="btn btn-primary">
+    </div>
+  </div>
+</form>
