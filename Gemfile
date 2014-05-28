@@ -28,7 +28,8 @@ gem 'spring',        group: :development
 
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch => "kiei925"
 
-# gem 'devise', '~> 3.2.4'
+gem 'devise', '~> 3.2.4'
+#
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

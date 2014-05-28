@@ -1,5 +1,5 @@
 class RoomPreference < ActiveRecord::Base
 
-belongs_to :user_detail
+belongs_to :user
 
 end
