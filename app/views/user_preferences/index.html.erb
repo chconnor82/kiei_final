@@ -7,9 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Image url</th>
-      <th>Caption</th>
-      <th>User preference boolean</th>
+      <th>User Preference</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,8 +18,6 @@
     <% @user_preferences.each do |user_preference| %>
       <tr>
         <td><%= user_preference.image_url %></td>
-        <td><%= user_preference.caption %></td>
-        <td><%= user_preference.user_preference_boolean %></td>
         <td>
           <a href="/user_preferences/<%= user_preference.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

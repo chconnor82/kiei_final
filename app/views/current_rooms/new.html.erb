@@ -45,13 +45,15 @@
     </div>
   </div>
 
-  <!-- Label and input for photo_image -->
+
+  <!-- Label and input for room_image -->
+  <form action="/create_current_room" class="form-horizontal" method="post" enctype="multipart/forms-data">
   <div class="form-group">
-    <label for="photo_image" class="col-sm-2 control-label">
-      Photo image
+    <label for="room_image" class="col-sm-2 control-label">
+      Room image
     </label>
     <div class="col-sm-10">
-      <input type="text" id="photo_image" name="photo_image" placeholder="Photo image" class="form-control" value="<%= @current_room.photo_image %>">
+      <input type="file" id="room_image" name="room_image" class="form-control">
     </div>
   </div>
 

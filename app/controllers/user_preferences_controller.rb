@@ -9,6 +9,7 @@ class UserPreferencesController < ApplicationController
 
   def new
     @user_preference = UserPreference.new
+    @user_preference.caption = params[:caption]
   end
 
   def create

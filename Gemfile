@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch => "kiei925"
 
 gem 'devise', '~> 3.2.4'
+
+gem 'carrierwave'
 #
 
 # Use ActiveModel has_secure_password
