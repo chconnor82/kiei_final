@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Routes for the Current_room resource:
   # CREATE
   get('/current_rooms/new', { :controller => 'current_rooms', :action => 'new' })
-  get('/create_current_room', { :controller => 'current_rooms', :action => 'create' })
+  post('/create_current_room', { :controller => 'current_rooms', :action => 'create' })
 
   # READ
   get('/current_rooms', { :controller => 'current_rooms', :action => 'index' })
@@ -60,6 +60,8 @@ Rails.application.routes.draw do
   #------------------------------
 
   get('/home_610', {:controller => 'home', :action => 'new' })
+
+  get('/admin', {:controller => 'designer', :action => 'customers_all'})
 
 end
 

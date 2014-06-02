@@ -19,7 +19,7 @@ class UserPreferencesController < ApplicationController
     @user_preference.user_preference_boolean = params[:user_preference_boolean]
 
     if @user_preference.save
-      redirect_to "/room_preferences/new", :notice => "User preference created successfully."
+      redirect_to "/room_preferences/new", :notice => "Thanks for letting us know about your style!"
     else
       render 'new'
     end

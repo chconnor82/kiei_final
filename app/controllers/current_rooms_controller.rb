@@ -1,6 +1,6 @@
 class CurrentRoomsController < ApplicationController
   def index
-    @current_rooms = CurrentRoom.all
+    @current_room = CurrentRoom.all
   end
 
   def show
@@ -16,11 +16,10 @@ class CurrentRoomsController < ApplicationController
     @current_room.height = params[:height]
     @current_room.Width = params[:Width]
     @current_room.room_type = params[:room_type]
-    @current_room.photo_image = params[:photo_image]
     @current_room.room_image = params[:room_image]
 
     if @current_room.save
-      redirect_to "/users/sign_up", :notice => "Current room created successfully."
+      redirect_to "/users/sign_up", :notice => "Current room details created successfully."
     else
       render 'new'
     end
@@ -32,11 +31,10 @@ class CurrentRoomsController < ApplicationController
 
   def update
     @current_room = CurrentRoom.find(params[:id])
-
     @current_room.height = params[:height]
     @current_room.Width = params[:Width]
     @current_room.room_type = params[:room_type]
-    @current_room.photo_image = params[:photo_image]
+    @current_room.room_image = params[:room_image]
 
     if @current_room.save
       redirect_to "/current_rooms", :notice => "Current room updated successfully."

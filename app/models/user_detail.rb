@@ -4,6 +4,5 @@ class UserDetail < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :room_preferences
 
 end
