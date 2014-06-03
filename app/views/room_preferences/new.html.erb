@@ -1,63 +1,126 @@
-<p><img src="http://610homegeneva.com/wp-content/uploads/2010/03/610home-black.jpg"></p>
+<img src="http://610homegeneva.com/wp-content/uploads/2010/03/610home-black.jpg" width="100">
 
-<div class="page-header">
-  <h1>What type of room do you perfer?</h1>
+<div>
+  <h1>What type of room stryle do you perfer?</h1>
+  <h4>To learn more about the style click on the image.....</h4>
 </div>
 
+
 <div class="row">
+  <!-- classic Style -->
   <div class="col-xs-6 col-md-3">
-    <a href="/current_rooms/new" class="thumbnail">
+    <a href="http://www.pinterest.com/culturecoutture/classic-interior-design-project/" class="thumbnail">
       <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRR0aGPpk8lmtxBfHub9Ss2WFjN-52T5zLjH3sKFe4s98jYdgNH">
     </a>
   </div>
 
+<!-- Modern Style -->
   <div class="col-xs-6 col-md-3">
-    <a href="/current_rooms/new" class="thumbnail">
+    <a href="http://www.pinterest.com/bdebytes/modern-interior-design/" class="thumbnail">
       <img src="http://fancycribs.com/wp-content/uploads/2013/04/Hot-Interior-Design-Trends-to-Watch-for-in-2013-23.jpg">
     </a>
   </div>
 
-
+ <!--  Feng Shui -->
   <div class="col-xs-6 col-md-3">
-    <a href="/current_rooms/new" class="thumbnail">
+    <a href="http://www.pinterest.com/kathybeaman/feng-shui/" class="thumbnail">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ62EGv7BpP7KNLvL5lt6-UShrhDHiU2Ptd7_Tfyo92wWJ0ueyM">
     </a>
   </div>
 
+
+
   <div class="col-xs-6 col-md-3">
-    <a href="/current_rooms/new" class="thumbnail">
+    <a href="" class="thumbnail">
       <img src="https://cdn0.iconfinder.com/data/icons/huge-business-vector-icons/60/equipment-512.png">
     </a>
     <p><center>None of these styles match my prefernces we have some work to do</center></p>
   </div>
 </div>
 
+<div class="row">
+<!-- Classic Style -->
+<div class= "col-md-3">
+  <form action="/create_room_preference">
+     <input type="hidden" id="room_photo_id" type="text" name="room_photo_id" value="Classic Sytle">
+    <input type="submit" value="Classic Style" class="btn btn-primary">
+</form>
+</div>
+
+<!-- Modern Style -->
+<div class= "col-md-3">
+  <form action="/current_rooms/new">
+     <input type="hidden" id="integer" type="text" name="integer" value="Classic Sytle">
+    <input type="submit" value="Modern Style" class="btn btn-primary">
+</form>
+</div>
+
+<!-- Feng Shui -->
+<div class= "col-md-3">
+  <form action="/current_rooms/new">
+     <input type="hidden" id="integer" type="text" name="integer" value="Classic Sytle">
+    <input type="submit" value="Feng shui" class="btn btn-primary">
+</form>
+</div>
+
+<!-- None of these match my styles -->
+<div class="col-md-3">
+  <form action="/current_rooms/new">
+     <input type="hidden" id="integer" type="text" name="integer" value="Classic Sytle">
+    <input type="submit" value="We have work to do" class="btn btn-primary">
+</form>
+  </div>
+</div>
+
 
 <div class="row">
+  <!-- Rustic Style -->
   <div class="col-xs-6 col-md-3">
-    <a href="/current_rooms/new" class="thumbnail">
+    <a href="http://www.pinterest.com/designstylenet/rustic-style/" class="thumbnail">
       <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ2Lo9qMEDncJcXZcovJykat_lgw9rHWFGjoREdc7oNMqsBQC0c8g">
     </a>
   </div>
 
+<!-- High Tech Style -->
   <div class="col-xs-6 col-md-3">
-    <a href="/current_rooms/new" class="thumbnail">
+    <a href="http://www.pinterest.com/jlwisner/high-tech-homes/" class="thumbnail">
       <img src="http://tyentusa.com/wp/wp-content/uploads/2012/11/259660734736513412_dirKcnTy_c.jpg">
     </a>
   </div>
 
-
+<!-- Artistic Style -->
   <div class="col-xs-6 col-md-3">
-    <a href="/current_rooms/new" class="thumbnail">
+    <a href="http://www.pinterest.com/isabellepoesy/artistic-home-ii/" class="thumbnail">
       <img src="http://adorable-home.com/wp-content/gallery/cute-and-quaint-apartment-with-an-eclectic-interior-design/cute-and-quaint-apartment-with-an-eclectic-interior-design-1.jpeg">
-      <form>
-        <input type="hidden" id="room_photo_id" type="text" name="room_photo_id" value="<%= @room_photo_id %>">
-      </form>
     </a>
   </div>
-
 </div>
 
+<div class="row">
 
+<!-- Rustic Style -->
+<div class= "ccol-xs-6 col-md-3">
+  <form action="/current_rooms/new">
+     <input type="hidden" id="integer" type="text" name="integer" value="Classic Sytle">
+    <input type="submit" value="Rustic Style" class="btn btn-primary">
+</form>
+</div>
 
+<!-- High Tech Style -->
+<div class= "col-xs-6 col-md-3">
+  <form action="/current_rooms/new">
+     <input type="hidden" id="integer" type="text" name="integer" value="Classic Sytle">
+    <input type="submit" value="High-Tech Style" class="btn btn-primary">
+</form>
+</div>
+
+<!-- Artistic Style -->
+<div class= "col-xs-6 col-md-3">
+  <form action="/current_rooms/new">
+     <input type="hidden" id="integer" type="text" name="integer" value="Classic Sytle">
+    <input type="submit" value="Artistic Style" class="btn btn-primary">
+</form>
+</div>
+
+</div>
 

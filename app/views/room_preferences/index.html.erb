@@ -1,3 +1,5 @@
+<img src="http://610homegeneva.com/wp-content/uploads/2010/03/610home-black.jpg" width="100">
+
 <div class="page-header">
   <h1>Room preferences</h1>
 </div>
@@ -9,8 +11,7 @@
     <tr>
       <th>Room photo</th>
       <th>Integer</th>
-      <th>User</th>
-      <th>Integer</th>
+      <th>Photo Type</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,10 +21,9 @@
   <tbody>
     <% @room_preferences.each do |room_preference| %>
       <tr>
+        <td><%= room_preference.photo %></td>
+        <td><%= room_preference.integer %></td>
         <td><%= room_preference.room_photo_id %></td>
-        <td><%= room_preference.integer %></td>
-        <td><%= room_preference.user_id %></td>
-        <td><%= room_preference.integer %></td>
         <td>
           <a href="/room_preferences/<%= room_preference.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

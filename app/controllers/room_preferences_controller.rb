@@ -16,12 +16,12 @@ class RoomPreferencesController < ApplicationController
     @room_preference = RoomPreference.new
     @room_preference.room_photo_id = params[:room_photo_id]
     @room_preference.integer = params[:integer]
-    @room_preference.user_name = params[:username]
+    # @room_preference.user_name = params[:username]
     @room_preference.integer = params[:integer]
     @room_preference.photo = params[:photo]
 
     if @room_preference.save
-      redirect_to "/room_preferences", :notice => "Room preference created successfully."
+      redirect_to "/current_rooms/new", :notice => "Room preference created successfully."
     else
       render 'new'
     end
