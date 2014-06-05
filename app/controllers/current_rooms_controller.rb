@@ -19,7 +19,7 @@ class CurrentRoomsController < ApplicationController
     @current_room.room_image = params[:room_image]
 
     if @current_room.save
-      redirect_to "/users/sign_up", :notice => "Current room details created successfully."
+      redirect_to "/users/sign_up", :notice => "We can definetely work with a room like this...."
     else
       render 'new'
     end

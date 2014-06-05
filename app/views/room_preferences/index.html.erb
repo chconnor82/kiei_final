@@ -9,9 +9,8 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Room photo</th>
-      <th>Integer</th>
       <th>Photo Type</th>
+      <th>Persona</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,7 +20,6 @@
   <tbody>
     <% @room_preferences.each do |room_preference| %>
       <tr>
-        <td><%= room_preference.photo %></td>
         <td><%= room_preference.integer %></td>
         <td><%= room_preference.room_photo_id %></td>
         <td>

@@ -21,7 +21,7 @@ class RoomPreferencesController < ApplicationController
     @room_preference.photo = params[:photo]
 
     if @room_preference.save
-      redirect_to "/current_rooms/new", :notice => "Room preference created successfully."
+      redirect_to "/current_rooms/new", :notice => "That would have been my choice as well....."
     else
       render 'new'
     end
