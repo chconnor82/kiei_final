@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+function savePreference(x, y){
+  $.cookie('user-pref-1-type', x);
+  $.cookie('user-pref-1-value', y);
+  type = $.cookie('user-pref-1-type');
+}

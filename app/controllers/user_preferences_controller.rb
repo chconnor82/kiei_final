@@ -8,15 +8,18 @@ class UserPreferencesController < ApplicationController
   end
 
   def new
+    cookies[:session_id] = UserPreference.all.count + 1
     @user_preference = UserPreference.new
     @user_preference.caption = params[:caption]
   end
 
   def create
+
     @user_preference = UserPreference.new
     @user_preference.image_url = params[:image_url]
     @user_preference.caption = params[:caption]
     @user_preference.user_preference_boolean = params[:user_preference_boolean]
+    @user_preference.session_id = cookies[:session_id]
 
     if @user_preference.save
       redirect_to "/room_preferences/new", :notice => "Thanks for letting us know about your style!"

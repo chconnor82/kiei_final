@@ -16,8 +16,16 @@
 
   <tbody>
       <tr>
+    <% User.all.each do |user| %>
+      <tr>
+        <td>
+          <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
+          <%= room_preference.integer %>
+          <%= room_preference.room_photo_id %>
+        </td>
+    <% end %>
         <td></td>
-        <td><%= @user_preference = UserPreference.find(params[:id]) %></td>
+        <td></td>
         <td></td>
         <td></td>
         <td>

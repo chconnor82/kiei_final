@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   #   render 'new'
   # end
   def new
-    render 'new'
+
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602054422) do
+ActiveRecord::Schema.define(version: 20140605194305) do
 
   create_table "current_rooms", force: true do |t|
     t.float    "height"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140602054422) do
     t.datetime "updated_at"
     t.float    "length"
     t.string   "room_image"
+    t.integer  "session_id"
   end
 
   create_table "room_preferences", force: true do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140602054422) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "photo"
+    t.integer  "session_id"
   end
 
   create_table "user_preferences", force: true do |t|
@@ -39,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140602054422) do
     t.string   "user_preference_boolean"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "session_id"
   end
 
   create_table "users", force: true do |t|
@@ -59,6 +62,7 @@ ActiveRecord::Schema.define(version: 20140602054422) do
     t.integer  "preferences"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "session_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

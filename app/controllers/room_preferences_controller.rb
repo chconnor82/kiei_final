@@ -13,12 +13,15 @@ class RoomPreferencesController < ApplicationController
   end
 
   def create
+
     @room_preference = RoomPreference.new
     @room_preference.room_photo_id = params[:room_photo_id]
     @room_preference.integer = params[:integer]
     # @room_preference.user_name = params[:username]
     @room_preference.integer = params[:integer]
     @room_preference.photo = params[:photo]
+    @room_preference.session_id = cookies[:session_id]
+
 
     if @room_preference.save
       redirect_to "/current_rooms/new", :notice => "That would have been my choice as well....."

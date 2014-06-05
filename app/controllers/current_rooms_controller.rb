@@ -12,11 +12,13 @@ class CurrentRoomsController < ApplicationController
   end
 
   def create
+
     @current_room = CurrentRoom.new
     @current_room.height = params[:height]
     @current_room.Width = params[:Width]
     @current_room.room_type = params[:room_type]
     @current_room.room_image = params[:room_image]
+    @current_room.session_id = cookies[:session_id]
 
     if @current_room.save
       redirect_to "/users/sign_up", :notice => "We can definetely work with a room like this...."
