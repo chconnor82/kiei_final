@@ -6,9 +6,9 @@
   <thead>
     <tr>
       <th>Room Preference</th>
+      <th>Current Room (photo)</th>
       <th>Email</th>
       <th>Personal Syle</th>
-      <th>Current Room</th>
       <th>Contact Preference</th>
       <th></th>
     </tr>
@@ -20,12 +20,23 @@
       <tr>
         <td>
           <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
-          <%= room_preference.integer %>
-          <%= room_preference.room_photo_id %>
+          <p><%= room_preference.integer %></p>
+          <p><%= room_preference.room_photo_id %></p>
         </td>
     <% end %>
-        <td></td>
-        <td></td>
+
+    <% User.all.each do |user| %>
+        <td>
+          <% current_room = CurrentRoom.find_by_session_id(user.session_id) %>
+
+          <img src= "<%= current_room.room_image %>" width="100">
+        </td>
+
+
+        <td><%= current_room.room_type %></td>
+
+
+
         <td></td>
         <td></td>
         <td>
