@@ -4,6 +4,7 @@
 
 <table class="table table-hover">
   <thead>
+
     <tr>
       <th>Persona</th>
       <th>Room Preference</th>
@@ -14,50 +15,38 @@
   </thead>
 
   <tbody>
-      <tr>
     <% User.all.each do |user| %>
+      <tr>
         <td>
           <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
           <%= room_preference.room_photo_id %>
         </td>
-    <% end %>
 
 
     <!-- Room type Preference -->
-   <% User.all.each do |user| %>
         <td>
           <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
           <%= room_preference.integer %>
         </td>
-    <% end %>
 
-    <% User.all.each do |user| %>
+
         <td>
           <% current_room = CurrentRoom.find_by_session_id(user.session_id) %>
           <img src= "<%= current_room.room_image %>" width="50">
         </td>
-    <% end %>
 
-
-
-
-<% User.all.each do |user| %>
+<!-- style  -->
         <td>
           <% user_preference = UserPreference.find_by_session_id(user.session_id) %>
           <%= user_preference.caption %>
         </td>
-    <% end %>
 
 <!-- Contact Preference -->
-<% User.all.each do |user| %>
+
         <td>
           <% user = User.find_by_session_id(user.session_id) %>
           <%= user.contact_preference %>
         </td>
-    <% end %>
-
-
-
 
        <!--  Buttons -->
        <td>
@@ -76,6 +65,7 @@
           </a>
         </td>
       </tr>
+      <% end %>
   </tbody>
 </table>
 
