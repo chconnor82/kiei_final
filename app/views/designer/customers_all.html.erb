@@ -5,56 +5,79 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Persona</th>
       <th>Room Preference</th>
       <th>Current Room (photo)</th>
-      <th>Email</th>
-      <th>Personal Syle</th>
-      <th>Contact Preference</th>
-      <th></th>
+      <th>Style Preference</th>
+      <th>Contact Prefernce</th>
     </tr>
   </thead>
 
   <tbody>
       <tr>
     <% User.all.each do |user| %>
-      <tr>
         <td>
           <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
-          <p><%= room_preference.integer %></p>
-          <p><%= room_preference.room_photo_id %></p>
+          <%= room_preference.room_photo_id %>
+        </td>
+    <% end %>
+
+
+    <!-- Room type Preference -->
+   <% User.all.each do |user| %>
+        <td>
+          <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
+          <%= room_preference.integer %>
         </td>
     <% end %>
 
     <% User.all.each do |user| %>
         <td>
           <% current_room = CurrentRoom.find_by_session_id(user.session_id) %>
-
-          <img src= "<%= current_room.room_image %>" width="100">
+          <img src= "<%= current_room.room_image %>" width="50">
         </td>
+    <% end %>
 
 
-        <td><%= current_room.room_type %></td>
 
 
-
-        <td></td>
-        <td></td>
+<% User.all.each do |user| %>
         <td>
-          <a href="" class="btn btn-primary">
+          <% user_preference = UserPreference.find_by_session_id(user.session_id) %>
+          <%= user_preference.caption %>
+        </td>
+    <% end %>
+
+<!-- Contact Preference -->
+<% User.all.each do |user| %>
+        <td>
+          <% user = User.find_by_session_id(user.session_id) %>
+          <%= user.contact_preference %>
+        </td>
+    <% end %>
+
+
+
+
+       <!--  Buttons -->
+       <td>
+          <a href="/current_rooms/:session_id" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
         </td>
         <td>
-          <a href="" class="btn btn-warning">
+          <a href="/current_rooms/:session_id" class="btn btn-warning">
             <i class="fa fa-edit"></i>
           </a>
         </td>
         <td>
-          <a href="" class="btn btn-danger">
+          <a href="/current_rooms/:session_id" class="btn btn-danger">
             <i class="fa fa-trash-o"></i>
           </a>
         </td>
       </tr>
   </tbody>
 </table>
+
+
 
