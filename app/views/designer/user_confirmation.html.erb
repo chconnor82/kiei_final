@@ -1,0 +1,73 @@
+<div class="page-header">
+  <h1>610 Home 'Guys Home' Customer Details</h1>
+</div>
+
+<table class="table table-hover">
+  <thead>
+
+    <tr>
+      <th>Persona</th>
+      <th>Room Preference</th>
+      <th>Current Room (photo)</th>
+      <th>Style Preference</th>
+      <th>Contact Prefernce</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% User.all.each do |user| %>
+      <tr>
+        <td>
+          <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
+          <%= room_preference.room_photo_id %>
+        </td>
+
+
+    <!-- Room type Preference and Image -->
+        <td>
+          <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
+          <%= room_preference.integer %>
+        </td>
+
+
+        <td>
+          <% current_room = CurrentRoom.find_by_session_id(user.session_id) %>
+          <img src= "<%= current_room.room_image %>" width="50">
+        </td>
+
+<!-- style  -->
+        <td>
+          <% user_preference = UserPreference.find_by_session_id(user.session_id) %>
+          <%= user_preference.caption %>
+        </td>
+
+<!-- Contact Preference -->
+
+        <td>
+          <% user = User.find_by_session_id(user.session_id) %>
+          <%= user.contact_preference %>
+        </td>
+
+       <!--  Buttons -->
+       <td>
+          <a href="/current_rooms/:session_id" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/current_rooms/:session_id" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/current_rooms/:session_id" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+
+
