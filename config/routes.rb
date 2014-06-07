@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # devise_for :user_detail
 
-  root 'home#new'
+  root 'designer#user_confirmation'
 
   # Routes for the Current_room resource:
   # CREATE
