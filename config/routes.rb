@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # devise_for :user_detail
 
+ # devise_for :users, path_names: {
+ #      sign_out: '/home_610'
+ #    }
+
+
   root 'designer#user_confirmation'
 
   # Routes for the Current_room resource:
@@ -60,6 +65,7 @@ Rails.application.routes.draw do
   #------------------------------
 
   get('/home_610', {:controller => 'home', :action => 'new' })
+  delete('/delete_home_610', {:controller => 'home', :action => 'destroy' })
 
   get('/admin', {:controller => 'designer', :action => 'customers_all'})
 

@@ -11,6 +11,8 @@
       <th>Current Room (photo)</th>
       <th>Style Preference</th>
       <th>Contact Prefernce</th>
+      <th>Email</th>
+      <th>Phone</th>
     </tr>
   </thead>
 
@@ -29,6 +31,12 @@
           <%= room_preference.integer %>
         </td>
 
+<!-- Current Room -->
+        <td>
+          <% current_room = CurrentRoom.find_by_session_id(user.session_id) %>
+          <%= current_room.room_type %>
+        </td>
+
 
 
 <!-- style  -->
@@ -44,22 +52,25 @@
           <%= user.contact_preference %>
         </td>
 
+        <!-- Contact Details -->
+
+          <td>
+          <% user = User.find_by_session_id(user.session_id) %>
+          <%= user.email %>
+        </td>
+
+        <td>
+          <% user = User.find_by_session_id(user.session_id) %>
+          <%= user.phone %>
+        </td>
+
        <!--  Buttons -->
        <td>
-          <a href="/current_rooms/:session_id" class="btn btn-primary">
+          <a href="/current_rooms/ <%= current_room.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
         </td>
-        <td>
-          <a href="/current_rooms/:session_id" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/current_rooms/:session_id" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
-          </a>
-        </td>
+
       </tr>
       <% end %>
   </tbody>
