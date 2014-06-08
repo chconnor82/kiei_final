@@ -9,14 +9,14 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:sign_up) << :phone_number
+    devise_parameter_sanitizer.for(:sign_up) << :phone
     devise_parameter_sanitizer.for(:sign_up) << :address
     devise_parameter_sanitizer.for(:sign_up) << :email
     devise_parameter_sanitizer.for(:sign_up) << :session_id
     devise_parameter_sanitizer.for(:sign_up) << :contact_preference
 
     devise_parameter_sanitizer.for(:account_update) << :name
-    devise_parameter_sanitizer.for(:account_update) << :phone_number
+    devise_parameter_sanitizer.for(:account_update) << :phone
     devise_parameter_sanitizer.for(:account_update) << :address
     devise_parameter_sanitizer.for(:account_update) << :email
     devise_parameter_sanitizer.for(:account_update) << :contact_preference
