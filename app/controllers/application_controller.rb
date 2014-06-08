@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :contact_preference
 
   end
+
+def after_sign_out_path_for(resource_or_scope)
+    '/home_610'
+  end
 end
