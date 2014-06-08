@@ -5,8 +5,6 @@ def customers_all
   end
 
 def user_confirmation
-
-user = User.find(params[:sesion_id])
-
+    @user = User.all
   end
 end

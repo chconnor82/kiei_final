@@ -24,7 +24,7 @@ class RoomPreferencesController < ApplicationController
 
 
     if @room_preference.save
-      redirect_to "/current_rooms/new", :notice => "That would have been my choice as well....."
+      redirect_to "/current_rooms/new", :notice => "That would have been our choice as well....."
     else
       render 'new'
     end

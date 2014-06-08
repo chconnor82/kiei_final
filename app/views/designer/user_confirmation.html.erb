@@ -5,45 +5,20 @@
 </div>
 </p>
 
-<table class="table table-hover">
-  <thead>
-
-    <tr>
-      <th class="lead">Email</th>
-      <th class="lead">Room Preference</th>
-      <th class="lead">Current Room (photo)</th>
-      <th class="lead">Style Preference</th>
-      <th class="lead">Contact Prefernce</th>
-    </tr>
-  </thead>
-
-<tbody>
-    <% session_id.each do |user| %>
-      <tr>
-        <td>
-          <%= room_preference.room_photo_id %>
-        </td>
-
-       <!--  Buttons -->
-       <td>
-          <a href="/current_rooms/:session_id" class="btn btn-primary">
-            <i class="fa fa-search-plus"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/current_rooms/:session_id" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/current_rooms/:session_id" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
-          </a>
-        </td>
-      </tr>
-      <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-sm-6 col-md-6">
+    <div class="thumbnail">
+      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS950_sC4UgMDw5u3p5RWcrI5jOrZSEWvV5gos212LimvIiH2f5">
+      <div class="caption">
+        <center><p class ="lead">Just sit back while our team works on getting you the room you always wanted!</p></center>
+        <p class="lead">Click below to update your details or go back to our home page</p>
+      </div>
+      <div class ="row">
+        <p><a href="/home_610" class="btn btn-primary" role="button">610 Home</a> <a href="/users/edit" class="btn btn-danger" role="button">Edit Profile</a></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
