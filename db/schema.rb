@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605221437) do
+ActiveRecord::Schema.define(version: 20140608213804) do
 
   create_table "current_rooms", force: true do |t|
     t.float    "height"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20140605221437) do
     t.datetime "updated_at"
     t.integer  "session_id"
     t.string   "contact_preference"
+    t.string   "name"
+    t.string   "string"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

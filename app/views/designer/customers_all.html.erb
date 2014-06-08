@@ -6,6 +6,7 @@
   <thead>
 
     <tr>
+      <th>Name</th>
       <th>Persona</th>
       <th>Room Preference</th>
       <th>Current Room</th>
@@ -19,6 +20,10 @@
   <tbody>
     <% User.all.each do |user| %>
       <tr>
+        <td>
+          <% user = User.find_by_session_id(user.session_id) %>
+          <%= user.name %>
+        </td>
         <td>
           <% room_preference = RoomPreference.find_by_session_id(user.session_id) %>
           <%= room_preference.room_photo_id %>
