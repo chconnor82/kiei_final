@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  #    }
 
 
-  root 'designer#user_confirmation'
+  root 'home#new'
 
   # Routes for the Current_room resource:
   # CREATE
@@ -65,9 +65,10 @@ Rails.application.routes.draw do
   #------------------------------
 
   get('/home_610', {:controller => 'home', :action => 'new' })
-  delete('/delete_home_610', {:controller => 'home', :action => 'destroy' })
+  # delete('/delete_home_610', {:controller => 'home', :action => 'destroy' })
 
   get('/admin', {:controller => 'designer', :action => 'customers_all'})
+  get('/user_confirmation', {:controller => 'designer', :action => 'user_confirmation'})
 
 end
 
